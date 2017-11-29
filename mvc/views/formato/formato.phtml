@@ -1,0 +1,114 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: mijae
+ * Date: 03/08/2017
+ * Time: 01:55 PM
+ */
+?>
+<script type="text/javascript">
+    function startTime() {
+        today = new Date();
+        d = today.getDate();
+        ms = today.getMonth() + 1;
+        y = today.getFullYear();
+        h = today.getHours();
+        m = today.getMinutes();
+        s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('reloj').innerHTML = d + "/" + ms + "/" + y + "," + h + ":" + m + ":" + s;
+        t = setTimeout('startTime()', 500);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+    window.onload = function () {
+        startTime();
+    }
+</script>
+<div id="reloj"></div>
+
+<div>
+    <h5 ALIGN="center">BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA</h5>
+    <h5 ALIGN="center">CONTRALORÍA GENERAL</h5>
+    <h5 ALIGN="center">DIRECCIÓN GENERAL DE CONTROL PATRIMONIAL</h5>
+    <h5 ALIGN="center">TRANSFERENCIA DE BIENES</h5>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Escudobuappositivo2.png/1200px-Escudobuappositivo2.png"
+         width="150" height="150" class="imagen">
+
+    <div>.</div>
+    <table align="center" class="Formato">
+        <tr class="cab">
+            <td></td>
+            <td>TIPO</td>
+            <td>No. INVENTARIO</td>
+            <td>DESCRIPCIÓN DEL BIEN</td>
+            <td>MARCA</td>
+            <td>MODELO</td>
+            <td>SERIE</td>
+            <td>OBSERVACIONES</td>
+            <td colspan="2"></td>
+        </tr>
+        <?php foreach ($this->mostrarF as $mosF): ?>
+            <tr class="datosT">
+                <td>
+                    <form id="check" name="check">
+                        <input type="checkbox" value="<?php echo $mosF['id_form']; ?>">
+                    </form>
+                </td>
+                <td><?php echo $mosF['id_tp'] ?></td>
+                <td><?php echo $mosF['inventario'] ?></td>
+                <td><?php echo $mosF['bien'] ?></td>
+                <td><?php echo $mosF['marca']; ?></td>
+                <td><?php echo $mosF['modelo']; ?></td>
+                <td><?php echo $mosF['serie']; ?></td>
+                <td><?php echo $mosF['obs']; ?></td>
+                <td>
+                    <div class="formatoM" data-id="<?php echo $mosF['id_form']; ?>"
+                         data-1="<?php echo $mosF['inventario']; ?>"
+                         data-2="<?php echo $mosF['bien']; ?>" data-3="<?php echo $mosF['marca']; ?>"
+                         data-4="<?php echo $mosF['modelo']; ?>" data-5="<?php echo $mosF['serie']; ?>"
+                         data-6="<?php echo $mosF['obs']; ?>">
+                        <a>Modificar</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="formatoE" data-id="<?php echo $mosF['id_form']; ?>"
+                         data-1="<?php echo $mosF['inventario']; ?>"
+                         data-2="<?php echo $mosF['bien']; ?>" data-3="<?php echo $mosF['marca']; ?>"
+                         data-4="<?php echo $mosF['modelo']; ?>" data-5="<?php echo $mosF['serie']; ?>"
+                         data-6="<?php echo $mosF['obs']; ?>" data-7="Eliminado">
+                        <a>Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <form method="post" id="formato" name="formato">
+        <div>
+            <button type="button" class="botonF">
+                Agregar
+            </button>
+        </div>
+    </form>
+
+    <form method="post" id="formatoEnvia" name="formatoEnvia">
+        <div>
+            <button type="button" class="botonEnv">
+                Enviar a...
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    var root = '<?php echo BASE_URL . $this->_controller . '/';?>'
+</script>

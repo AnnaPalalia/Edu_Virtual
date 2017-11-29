@@ -1,0 +1,52 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: mijae
+ * Date: 07/06/2017
+ * Time: 03:57 PM
+ */
+?>
+<form method="post" id="video" name="video">
+    <div>
+        <button type="button">
+            Agregar Nuevo
+        </button>
+    </div>
+</form>
+
+<div class="container">
+    <table class="Video">
+        <tr>
+            <td>Titulo</td>
+            <td>Url</td>
+            <td colspan="3"></td>
+
+        </tr>
+        <?php foreach ($this->mostrarT as $mosT): ?>
+            <tr>
+                <td><?php echo $mosT['nombre'] ?></td>
+                <td><?php echo $mosT['url'] ?></td>
+                <td>
+                    <div class="videoR" data-url="<?php echo $mosT['url']; ?>">
+                        <a>Ver</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="videoM" data-id="<?php echo $mosT['id']; ?>"
+                         data-nombre="<?php echo $mosT['nombre']; ?>" data-url="<?php echo $mosT['url']; ?>">
+                        <a>Modifiar</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="videoE" data-id="<?php echo $mosT['id']; ?>">
+                        <a>Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
+
+<script>
+    var root = '<?php echo BASE_URL . $this->_controller . '/';?>'
+</script>

@@ -1,0 +1,51 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: mijae
+ * Date: 23/08/2017
+ * Time: 03:06 PM
+ */
+?>
+<div>
+    <h5 ALIGN="center">BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA</h5>
+    <h5 ALIGN="center">CONTRALORÍA GENERAL</h5>
+    <h5 ALIGN="center">DIRECCIÓN GENERAL DE CONTROL PATRIMONIAL</h5>
+    <h5 ALIGN="center">TRANSFERENCIA DE BIENES</h5>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Escudobuappositivo2.png/1200px-Escudobuappositivo2.png"
+         width="150" height="150" class="imagen">
+</div>
+
+<div>
+    <h1>Historial de modificaciones</h1>
+    <table align="center" class="FormatoAdmi">
+        <tr>
+            <td>Hora de cambio</td>
+            <td>Id. Inventario</td>
+            <td>No. Inventario</td>
+            <td>DESCRIPCIÓN DEL BIEN</td>
+            <td>MARCA</td>
+            <td>MODELO</td>
+            <td>SERIE</td>
+            <td>OBSERVACIONES</td>
+            <td>ACCION</td>
+        </tr>
+       <?php foreach ($this->mostrarH as $mosH):?>
+           <tr>
+               <td><?php echo $mosH['fechaMod'] ?></td>
+               <td><?php echo $mosH['id_form'] ?></td>
+               <td><?php echo $mosH['inventario']; ?></td>
+               <td><?php echo $mosH['bien']; ?></td>
+               <td><?php echo $mosH['marca']; ?></td>
+               <td><?php echo $mosH['modelo']; ?></td>
+               <td><?php echo $mosH['serie']; ?></td>
+               <td><?php echo $mosH['obs']; ?></td>
+               <td><?php echo $mosH['accion']; ?></td>
+           </tr>
+       <?php endforeach; ?>
+    </table>
+</div>
+
+<script>
+    var root = '<?php echo BASE_URL . $this->_controller . '/';?>'
+</script>

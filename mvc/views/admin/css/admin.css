@@ -1,0 +1,17 @@
+.imagen{
+    position: absolute;
+    top:   55px;
+    left:  350px;
+}
+
+.FormatoAdmi {
+    font-family: "Calibri";
+    font-size: 20px;
+    color: #0f0f0f;
+
+    width: 1000px;
+    border: 1px solid #000000;
+}
+.FormatoAdmi th,.FormatoAdmi td{
+    border: 2px solid #000000;
+}

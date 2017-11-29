@@ -1,0 +1,62 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: mijae
+ * Date: 07/02/2017
+ * Time: 04:01 PM
+ */
+?>
+
+<script type="text/javascript">
+    function mayusculas() {
+        var z=document.getElementById("name").value
+        document.getElementById("name").value=z.toUpperCase()
+    }
+</script>
+
+<script type="text/javascript">
+    function mayusculas2() {
+        var z=document.getElementById("contenido").value
+        document.getElementById("contenido").value=z.toUpperCase()
+    }
+</script>
+
+<div class="container">
+    <div class="row main">
+        <div class="main-login main-center">
+
+            <h5>Creacion de blog</h5>
+            <form method="post" id="register" name="register">
+
+                <div class="form-group">
+                    <label for="name" class="cols-sm-2 control-label">Titulo</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                            <input type="text" REQUIRED class="form-control" name="name" id="name"  placeholder="Titulo" onblur="mayusculas()"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="cols-sm-2 control-label">Contenido</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input type="text" REQUIRED class="form-control" name="contenido" id="contenido"  placeholder="Contenido" onblur="mayusculas2()"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    var root='<?php echo BASE_URL.$this->_controller.'/';?>'
+</script>

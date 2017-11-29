@@ -1,0 +1,46 @@
+.Formato {
+    top: 1000px;
+    left: 1000px;
+
+    font-family: "Calibri";
+    font-size: 20px;
+    color: #0f0f0f;
+
+    width: 1200px;
+    border: 2.5px;
+}
+
+.Formato th, .Formato td {
+    border: 2px solid #000000;
+}
+
+tr:nth-child(even) {
+    background-color: #a6e1ec;
+}
+
+.cab {
+    background-color: #2b669a;
+    color: #ffffff;
+}
+
+.datosT {
+    background-color: #fcfcfc;
+    color: #000000;
+}
+
+.imagen {
+    position: absolute;
+    top: 55px;
+    left: 350px;
+}
+
+.selectorO {
+    position: relative;
+    left: 20px;
+}
+
+.botonF {
+    position: absolute;
+    top: 180px;
+    left: 1200px;
+}

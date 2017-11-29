@@ -1,0 +1,72 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: mijae
+ * Date: 10/02/2017
+ * Time: 12:38 PM
+ */
+?>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+</head>
+<style type="text/css">
+    .mayusculas {
+        text-transform: uppercase;
+    }
+</style>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('http://ostapenko-photo.com/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Contenido en el Blog</h1>
+                    <hr class="small">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="row">
+    <form accept-charset="utf-8" class="" method="post" id="buscador" name="buscador">
+        <div class="col-md-4 col-md-push-7">
+            <!-- Blog Search Well -->
+            <div class="well">
+                <h4>Buscador</h4>
+                <div class="input-group">
+                    <input type="text" class="form-control mayusculas" name="buscar" id="buscar" placeholder="Buscar">
+                </div>
+                <button type="submit" class="btn btn-success btn-sm" data-toggle="modal">
+                    Buscar
+                </button>
+                <!-- /.input-group -->
+            </div>
+        </div>
+    </form>
+
+    <div class="container">
+        <div class="col-md-5 col-md-pull-2">
+            <!-- First Blog Post -->
+            <h1 class="page-header">
+                <?php foreach ($this->mostrar as $mos): ?>
+                    <div class="post-preview" data-id="<?php echo $mos['id']; ?>"
+                         data-titulo="<?php echo $mos['titulo']; ?>" data-contenido="<?php echo $mos['contenido']; ?>">
+                        <a>
+                            <h2 class="post-title"><?php echo $mos['titulo'] ?></h2>
+                            <h3 class="post-subtitle"><?php echo $mos['contenido'] ?></h3> 
+                        </a>
+                    </div>
+                    <hr>
+                <?php endforeach; ?>
+            </h1>
+        </div>
+    </div>
+</div>
+
+<script>
+    var root = '<?php echo BASE_URL . $this->_controller . '/';?>'
+</script>

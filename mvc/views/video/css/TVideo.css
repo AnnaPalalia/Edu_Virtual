@@ -1,0 +1,14 @@
+.Video {
+    font-family: "Century Gothic";
+    font-size: 20px;
+    color: #5cb85c;
+
+    width: 1000px;
+    border: 3px solid #009edf;
+}
+.Video th,.Video td{
+    border: 2px solid #761c19;
+}
+tbody{
+    background: #faebcc;
+}
